@@ -8,18 +8,19 @@ Ish.Go.View = new function() {
 	var canvas;
 	var context;
 	var isBoardMarked = false;
+	var boardRatio = 19.27;
 
 	// Static object for storing constants
 	var ViewConstants = new function() {
 		this.boardWidth = 19;
 		this.boardHeight = 19;
 		this.boardPadding = 6;
-		this.pieceWidth = 27;
-		this.pieceHeight = 27;
-		this.pixelWidth = 522;
-		this.pixelHeight = 522;
-		this.imgPieceBlack = "piece-black.png";
-		this.imgPieceWhite = "piece-white.png";
+		this.pixelWidth = 800;
+		this.pixelHeight = 800;
+		this.pieceWidth = 800 / boardRatio;
+		this.pieceHeight = 800 / boardRatio;
+		this.imgPieceBlack = "dist/assets/img/piece-black.png";
+		this.imgPieceWhite = "dist/assets/img/piece-white.png";
 		this.imgFlagBlack = "flag-black.png";
 		this.imgFlagWhite = "flag-white.png";
 	};
@@ -63,7 +64,7 @@ Ish.Go.View = new function() {
 		
 			canvas.width = ViewConstants.pixelWidth;
 			canvas.height = ViewConstants.pixelHeight;
-			canvas.style.background = "transparent url(board.png) no-repeat 0 0";
+			canvas.style.background = "transparent url(dist/assets/img/board.jpg) no-repeat 0 0";
 			
 			canvas.addEventListener("click", clickListener, false);
 			canvas.addEventListener("mousemove", mouseMoveListener);
